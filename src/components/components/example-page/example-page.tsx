@@ -17,17 +17,20 @@ export class ExamplePage {
     render(){
         return(
             <Host>
-                <p>Some data that was fetched.</p>
-                <ol>
-                    {this.peoples.map((unit) => {
-                        return <li>{unit.name}</li>
-                    })}
+                <p>
+                    Some data that was fetched from <a href="https://swapi.dev/api/people/"> swapi.dev</a>:
+                </p>
                     {/* {this.peoples.map((unit) => {
-                        return <ul>{Object.keys(unit).forEach((key) => {
-                            return <li>{`${key} ${unit[key]}`}</li>
-                        })}</ul>    
+                        return <li>{unit.name}</li>
                     })} */}
-                </ol>
+                    {this.peoples.map((unit) => 
+                        <ul>
+                            <li>name: {unit.name}</li>
+                            <li>{`gender: ${unit.gender}`}</li>
+                            <li>{"height: " + unit.height}</li>
+                            <li>{"mass: "}{unit.mass}</li>
+                        </ul>    
+                    )}
             </Host>
         )
     }

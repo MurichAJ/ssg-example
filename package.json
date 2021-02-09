@@ -1,0 +1,19 @@
+{
+  "name": "ssg-example",
+  "private": true,
+  "version": "0.0.1",
+  "description": "SSG Example",
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "prerender": "stencil build --prerender"
+  },
+  "devDependencies": {
+    "@stencil/core": "^2.0.0",
+    "stencil-router-v2": "^0.6.0"
+  },
+  "license": "MIT"
+}

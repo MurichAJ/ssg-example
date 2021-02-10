@@ -26,6 +26,10 @@ export class AppRoot {
             <cats-page />
           </Route>
 
+          <Route path="/firestore-xmpl">
+            <firestore-xmpl-page />
+          </Route>
+
           <Route path={match("/example")}>
             <example-page />
           </Route>

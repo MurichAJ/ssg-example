@@ -14,6 +14,8 @@ export namespace Components {
     }
     interface ExamplePage {
     }
+    interface FirestoreXmlpPage {
+    }
 }
 declare global {
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
@@ -40,11 +42,18 @@ declare global {
         prototype: HTMLExamplePageElement;
         new (): HTMLExamplePageElement;
     };
+    interface HTMLFirestoreXmlpPageElement extends Components.FirestoreXmlpPage, HTMLStencilElement {
+    }
+    var HTMLFirestoreXmlpPageElement: {
+        prototype: HTMLFirestoreXmlpPageElement;
+        new (): HTMLFirestoreXmlpPageElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-root": HTMLAppRootElement;
         "cats-page": HTMLCatsPageElement;
         "example-page": HTMLExamplePageElement;
+        "firestore-xmlp-page": HTMLFirestoreXmlpPageElement;
     }
 }
 declare namespace LocalJSX {
@@ -56,11 +65,14 @@ declare namespace LocalJSX {
     }
     interface ExamplePage {
     }
+    interface FirestoreXmlpPage {
+    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-root": AppRoot;
         "cats-page": CatsPage;
         "example-page": ExamplePage;
+        "firestore-xmlp-page": FirestoreXmlpPage;
     }
 }
 export { LocalJSX as JSX };
@@ -71,6 +83,7 @@ declare module "@stencil/core" {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "cats-page": LocalJSX.CatsPage & JSXBase.HTMLAttributes<HTMLCatsPageElement>;
             "example-page": LocalJSX.ExamplePage & JSXBase.HTMLAttributes<HTMLExamplePageElement>;
+            "firestore-xmlp-page": LocalJSX.FirestoreXmlpPage & JSXBase.HTMLAttributes<HTMLFirestoreXmlpPageElement>;
         }
     }
 }

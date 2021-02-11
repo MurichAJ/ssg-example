@@ -1,23 +1,10 @@
 import { Component, h, Host } from "@stencil/core"
-import firebase from "firebase/app";
-import 'firebase/firestore';
-
-let db = firebase.firestore();
 @Component({
     tag: "cats-page",
     shadow: true
 })
 
 export class CatsPage {
-    componentWillLoad() {
-        console.log("hah");
-        
-        db.collection("users").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => ${doc.data()}`);
-            })
-        })
-    }
     render(){
         return(
             <Host>

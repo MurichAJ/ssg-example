@@ -1,6 +1,6 @@
 import { Component, h, Host} from "@stencil/core"
 @Component({
-    tag: "firestore-xmlp-page",
+    tag: "firestore-xmpl-page",
     shadow: true
 })
 

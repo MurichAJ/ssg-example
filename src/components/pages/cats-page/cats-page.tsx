@@ -29,6 +29,7 @@ export class CatsPage {
                 <img src="/assets/images/Unknown1.jpg" />
                 <img src="/assets/images/Unknown2.jpg" />
                 <img src="/assets/images/Unknown3.jpg" />
+                <test-cmp></test-cmp>
             </Host>
         )
     }

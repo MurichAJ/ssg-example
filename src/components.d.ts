@@ -14,7 +14,9 @@ export namespace Components {
     }
     interface ExamplePage {
     }
-    interface FirestoreXmlpPage {
+    interface FirestoreXmplPage {
+    }
+    interface TestCmp {
     }
 }
 declare global {
@@ -42,18 +44,25 @@ declare global {
         prototype: HTMLExamplePageElement;
         new (): HTMLExamplePageElement;
     };
-    interface HTMLFirestoreXmlpPageElement extends Components.FirestoreXmlpPage, HTMLStencilElement {
+    interface HTMLFirestoreXmplPageElement extends Components.FirestoreXmplPage, HTMLStencilElement {
     }
-    var HTMLFirestoreXmlpPageElement: {
-        prototype: HTMLFirestoreXmlpPageElement;
-        new (): HTMLFirestoreXmlpPageElement;
+    var HTMLFirestoreXmplPageElement: {
+        prototype: HTMLFirestoreXmplPageElement;
+        new (): HTMLFirestoreXmplPageElement;
+    };
+    interface HTMLTestCmpElement extends Components.TestCmp, HTMLStencilElement {
+    }
+    var HTMLTestCmpElement: {
+        prototype: HTMLTestCmpElement;
+        new (): HTMLTestCmpElement;
     };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-root": HTMLAppRootElement;
         "cats-page": HTMLCatsPageElement;
         "example-page": HTMLExamplePageElement;
-        "firestore-xmlp-page": HTMLFirestoreXmlpPageElement;
+        "firestore-xmpl-page": HTMLFirestoreXmplPageElement;
+        "test-cmp": HTMLTestCmpElement;
     }
 }
 declare namespace LocalJSX {
@@ -65,14 +74,17 @@ declare namespace LocalJSX {
     }
     interface ExamplePage {
     }
-    interface FirestoreXmlpPage {
+    interface FirestoreXmplPage {
+    }
+    interface TestCmp {
     }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-root": AppRoot;
         "cats-page": CatsPage;
         "example-page": ExamplePage;
-        "firestore-xmlp-page": FirestoreXmlpPage;
+        "firestore-xmpl-page": FirestoreXmplPage;
+        "test-cmp": TestCmp;
     }
 }
 export { LocalJSX as JSX };
@@ -83,7 +95,8 @@ declare module "@stencil/core" {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "cats-page": LocalJSX.CatsPage & JSXBase.HTMLAttributes<HTMLCatsPageElement>;
             "example-page": LocalJSX.ExamplePage & JSXBase.HTMLAttributes<HTMLExamplePageElement>;
-            "firestore-xmlp-page": LocalJSX.FirestoreXmlpPage & JSXBase.HTMLAttributes<HTMLFirestoreXmlpPageElement>;
+            "firestore-xmpl-page": LocalJSX.FirestoreXmplPage & JSXBase.HTMLAttributes<HTMLFirestoreXmplPageElement>;
+            "test-cmp": LocalJSX.TestCmp & JSXBase.HTMLAttributes<HTMLTestCmpElement>;
         }
     }
 }

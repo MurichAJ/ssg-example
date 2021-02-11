@@ -30,6 +30,10 @@ export class AppRoot {
             <firestore-xmpl-page />
           </Route>
 
+          <Route path="/test-cmp">
+            <test-cmp></test-cmp>
+          </Route>
+
           <Route path={match("/example")}>
             <example-page />
           </Route>

@@ -22,14 +22,14 @@ export class FirestoreXmplPage {
       });
   }
   render() {
-    console.log(
-      "🚀 ~ file: firestore-xmpl-page.tsx ~ line 25 ~ FirestoreXmplPage ~ render ~ this.data",
-      this.data
-    );
-    console.log(
-      "🚀 ~ file: firestore-xmpl-page.tsx ~ line 21 ~ FirestoreXmplPage ~ querySnapshot.forEach ~ this.id",
-      this.id
-    );
+    // console.log(
+    //   "🚀 ~ file: firestore-xmpl-page.tsx ~ line 25 ~ FirestoreXmplPage ~ render ~ this.data",
+    //   this.data
+    // );
+    // console.log(
+    //   "🚀 ~ file: firestore-xmpl-page.tsx ~ line 21 ~ FirestoreXmplPage ~ querySnapshot.forEach ~ this.id",
+    //   this.id
+    // );
 
     return (
       <Host>

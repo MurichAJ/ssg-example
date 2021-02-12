@@ -12,7 +12,7 @@ export class ExamplePage {
         await ret.json().then((data) => {
             this.peoples = data["results"];    
         });
-        console.log(this.peoples);
+        // console.log(this.peoples);
     }
     render(){
         return(

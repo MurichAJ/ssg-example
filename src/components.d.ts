@@ -18,6 +18,8 @@ export namespace Components {
     }
     interface TestCmp {
     }
+    interface TestPage {
+    }
 }
 declare global {
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
@@ -56,6 +58,12 @@ declare global {
         prototype: HTMLTestCmpElement;
         new (): HTMLTestCmpElement;
     };
+    interface HTMLTestPageElement extends Components.TestPage, HTMLStencilElement {
+    }
+    var HTMLTestPageElement: {
+        prototype: HTMLTestPageElement;
+        new (): HTMLTestPageElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-root": HTMLAppRootElement;
@@ -63,6 +71,7 @@ declare global {
         "example-page": HTMLExamplePageElement;
         "firestore-xmpl-page": HTMLFirestoreXmplPageElement;
         "test-cmp": HTMLTestCmpElement;
+        "test-page": HTMLTestPageElement;
     }
 }
 declare namespace LocalJSX {
@@ -78,6 +87,8 @@ declare namespace LocalJSX {
     }
     interface TestCmp {
     }
+    interface TestPage {
+    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-root": AppRoot;
@@ -85,6 +96,7 @@ declare namespace LocalJSX {
         "example-page": ExamplePage;
         "firestore-xmpl-page": FirestoreXmplPage;
         "test-cmp": TestCmp;
+        "test-page": TestPage;
     }
 }
 export { LocalJSX as JSX };
@@ -97,6 +109,7 @@ declare module "@stencil/core" {
             "example-page": LocalJSX.ExamplePage & JSXBase.HTMLAttributes<HTMLExamplePageElement>;
             "firestore-xmpl-page": LocalJSX.FirestoreXmplPage & JSXBase.HTMLAttributes<HTMLFirestoreXmplPageElement>;
             "test-cmp": LocalJSX.TestCmp & JSXBase.HTMLAttributes<HTMLTestCmpElement>;
+            "test-page": LocalJSX.TestPage & JSXBase.HTMLAttributes<HTMLTestPageElement>;
         }
     }
 }

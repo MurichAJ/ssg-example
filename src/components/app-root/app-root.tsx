@@ -34,6 +34,10 @@ export class AppRoot {
             <test-cmp></test-cmp>
           </Route>
 
+          <Route path="/test-page">
+            <test-page></test-page>
+          </Route>
+
           <Route path={match("/example")}>
             <example-page />
           </Route>

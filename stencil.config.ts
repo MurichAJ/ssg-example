@@ -1,4 +1,6 @@
 import { Config } from '@stencil/core';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
+
 
 // https://stenciljs.com/docs/config
 
@@ -6,6 +8,12 @@ export const config: Config = {
   globalStyle: 'src/global/app.css',
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
+  rollupPlugins: {
+    before: [
+      // Plugins injected before rollupNodeResolve()
+      nodePolyfills()
+    ],
+  },
   // nodeResolve: { only: ["main", "module", "browser"] },
   outputTargets: [
     {

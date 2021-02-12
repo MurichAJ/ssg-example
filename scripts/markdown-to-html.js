@@ -9,7 +9,7 @@ const util_1 = require("util");
 const path_1 = __importDefault(require("path"));
 const fs_extra_1 = require("fs-extra");
 const globAsync = util_1.promisify(glob_1.default);
-const DESTINATION_DIR = './src/assets/md-pages';
+const DESTINATION_DIR = './src/assets/html-pages';
 const SOURCE_DIR = './src/md-pages';
 // const SITE_STRUCTURE_FILE = './src/assets/docs-structure.json';
 (async function () {

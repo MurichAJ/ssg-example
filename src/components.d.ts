@@ -16,7 +16,8 @@ export namespace Components {
     }
     interface FirestoreXmplPage {
     }
-    interface TestCmp {
+    interface PostPage {
+        "page": string;
     }
     interface TestPage {
     }
@@ -52,11 +53,11 @@ declare global {
         prototype: HTMLFirestoreXmplPageElement;
         new (): HTMLFirestoreXmplPageElement;
     };
-    interface HTMLTestCmpElement extends Components.TestCmp, HTMLStencilElement {
+    interface HTMLPostPageElement extends Components.PostPage, HTMLStencilElement {
     }
-    var HTMLTestCmpElement: {
-        prototype: HTMLTestCmpElement;
-        new (): HTMLTestCmpElement;
+    var HTMLPostPageElement: {
+        prototype: HTMLPostPageElement;
+        new (): HTMLPostPageElement;
     };
     interface HTMLTestPageElement extends Components.TestPage, HTMLStencilElement {
     }
@@ -70,7 +71,7 @@ declare global {
         "cats-page": HTMLCatsPageElement;
         "example-page": HTMLExamplePageElement;
         "firestore-xmpl-page": HTMLFirestoreXmplPageElement;
-        "test-cmp": HTMLTestCmpElement;
+        "post-page": HTMLPostPageElement;
         "test-page": HTMLTestPageElement;
     }
 }
@@ -85,7 +86,8 @@ declare namespace LocalJSX {
     }
     interface FirestoreXmplPage {
     }
-    interface TestCmp {
+    interface PostPage {
+        "page"?: string;
     }
     interface TestPage {
     }
@@ -95,7 +97,7 @@ declare namespace LocalJSX {
         "cats-page": CatsPage;
         "example-page": ExamplePage;
         "firestore-xmpl-page": FirestoreXmplPage;
-        "test-cmp": TestCmp;
+        "post-page": PostPage;
         "test-page": TestPage;
     }
 }
@@ -108,7 +110,7 @@ declare module "@stencil/core" {
             "cats-page": LocalJSX.CatsPage & JSXBase.HTMLAttributes<HTMLCatsPageElement>;
             "example-page": LocalJSX.ExamplePage & JSXBase.HTMLAttributes<HTMLExamplePageElement>;
             "firestore-xmpl-page": LocalJSX.FirestoreXmplPage & JSXBase.HTMLAttributes<HTMLFirestoreXmplPageElement>;
-            "test-cmp": LocalJSX.TestCmp & JSXBase.HTMLAttributes<HTMLTestCmpElement>;
+            "post-page": LocalJSX.PostPage & JSXBase.HTMLAttributes<HTMLPostPageElement>;
             "test-page": LocalJSX.TestPage & JSXBase.HTMLAttributes<HTMLTestPageElement>;
         }
     }

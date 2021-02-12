@@ -1,5 +1,5 @@
 import { Component, h, Element } from "@stencil/core";
-import marked from "marked";
+// import marked from "marked";
 // import { readFile } from "fs-extra";
 
 @Component({
@@ -36,11 +36,11 @@ export class TestPage {
 //       throw e;
 //     }
   }
-  componentDidLoad() {
-    this.el.shadowRoot.querySelector("#content").innerHTML = marked(
-      "# Marked in browser\n\nRendered by **marked**."
-    );
-  }
+//   componentDidLoad() {
+//     this.el.shadowRoot.querySelector("#content").innerHTML = marked(
+//       "# Marked in browser\n\nRendered by **marked**."
+//     );
+//   }
   render() {
     return (
       <div id="content">

@@ -94,7 +94,7 @@ __сильное выделение__ (например, полужирное н
 [Bar]: http://example.edu/ (!!Необязательный заголовок ссылки)
 
 ## Images
-![Alt-текст](./src/assets/images/Unknown.jpg "Заголовок изображения")
+![Alt-текст](/assets/images/Unknown.jpg "Заголовок изображения")
 
 Some header
 ---

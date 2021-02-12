@@ -7,7 +7,7 @@ import {readFile, writeFile, mkdirp, remove} from 'fs-extra';
 
 const globAsync = promisify(glob);
 
-const DESTINATION_DIR = './src/assets/md-pages';
+const DESTINATION_DIR = './src/assets/html-pages';
 const SOURCE_DIR = './src/md-pages';
 // const SITE_STRUCTURE_FILE = './src/assets/docs-structure.json';
 

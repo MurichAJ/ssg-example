@@ -1,8 +1,9 @@
 import marked from "marked";
 import glob from "glob";
-import { promisify } from 'util';
-import path from 'path';
+import {promisify} from "util";
+import path from "path";
 import {readFile, writeFile, mkdirp, remove} from 'fs-extra';
+
 
 const globAsync = promisify(glob);
 

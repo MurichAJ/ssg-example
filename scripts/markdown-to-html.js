@@ -1,9 +1,14 @@
-import marked from "marked";
-import glob from "glob";
-import { promisify } from "util";
-import path from "path";
-import { readFile, writeFile, mkdirp, remove } from 'fs-extra';
-const globAsync = promisify(glob);
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const marked_1 = __importDefault(require("marked"));
+const glob_1 = __importDefault(require("glob"));
+const util_1 = require("util");
+const path_1 = __importDefault(require("path"));
+const fs_extra_1 = require("fs-extra");
+const globAsync = util_1.promisify(glob_1.default);
 const DESTINATION_DIR = './src/assets/md-pages';
 const SOURCE_DIR = './src/md-pages';
 // const SITE_STRUCTURE_FILE = './src/assets/docs-structure.json';
@@ -13,29 +18,29 @@ const SOURCE_DIR = './src/md-pages';
     console.log(`running glob: ${SOURCE_DIR}/**/*.md`);
     const files = await globAsync(`${SOURCE_DIR}/**/*.md`, {});
     // console.log("🚀 ~ file: markdown-to-html.ts ~ line 17 ~ files", files)
-    await remove(DESTINATION_DIR);
+    await fs_extra_1.remove(DESTINATION_DIR);
     const filePromises = files.map(async (filePath) => {
         if (filePath === './src/docs/README.md') {
             return Promise.resolve();
         }
         let htmlContents = '';
         //   let markdownMetadata: MarkdownContent = {};
-        const jsonFileName = path.relative(SOURCE_DIR, filePath);
-        const destinationFileName = path.join(DESTINATION_DIR, path.dirname(jsonFileName), path.basename(jsonFileName, '.md') + '.json');
+        const jsonFileName = path_1.default.relative(SOURCE_DIR, filePath);
+        const destinationFileName = path_1.default.join(DESTINATION_DIR, path_1.default.dirname(jsonFileName), path_1.default.basename(jsonFileName, '.md') + '.html');
         //   markdownMetadata.headings = [];
-        const markdownContents = await readFile(filePath, { encoding: 'utf8' });
+        const markdownContents = await fs_extra_1.readFile(filePath, { encoding: 'utf8' });
         try {
             // let parsedMarkdown = frontMatter<any>(markdownContents);
             // parsedMarkdown = await getGithubData(filePath, parsedMarkdown);
-            const renderer = new marked.Renderer();
+            const renderer = new marked_1.default.Renderer();
             // collectHeadingMetadata(renderer, markdownMetadata);
             // changeCodeCreation(renderer);
             // localizeMarkdownLink(renderer, destinationFileName.replace('src',''), siteStructureJson);
-            htmlContents = marked(markdownContents, {
+            htmlContents = marked_1.default(markdownContents, {
                 renderer,
                 headerIds: true
             }).trim();
-            await mkdirp(path.join(DESTINATION_DIR, path.dirname(jsonFileName)));
+            await fs_extra_1.mkdirp(path_1.default.join(DESTINATION_DIR, path_1.default.dirname(jsonFileName)));
             // const data = {
             //   ...parsedMarkdown.attributes,
             //   ...markdownMetadata,
@@ -47,7 +52,7 @@ const SOURCE_DIR = './src/md-pages';
             // } else {
             //   data.title = data.title.trim() + ' - Stencil';
             // }
-            await writeFile(destinationFileName, JSON.stringify(htmlContents), {
+            await fs_extra_1.writeFile(destinationFileName, htmlContents, {
                 encoding: 'utf8'
             });
         }

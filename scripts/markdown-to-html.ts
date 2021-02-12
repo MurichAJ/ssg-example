@@ -30,7 +30,7 @@ const SOURCE_DIR = './src/md-pages';
       const destinationFileName = path.join(
         DESTINATION_DIR,
         path.dirname(jsonFileName),
-        path.basename(jsonFileName, '.md') + '.json'
+        path.basename(jsonFileName, '.md') + '.html'
       );
     //   markdownMetadata.headings = [];
   
@@ -68,7 +68,7 @@ const SOURCE_DIR = './src/md-pages';
         //   data.title = data.title.trim() + ' - Stencil';
         // }
   
-        await writeFile(destinationFileName, JSON.stringify(htmlContents), {
+        await writeFile(destinationFileName,  htmlContents, {
           encoding: 'utf8'
         });
   

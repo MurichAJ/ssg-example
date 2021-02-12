@@ -10,14 +10,15 @@
       "es2017"
     ],
     "moduleResolution": "node",
-    "module": "esnext",
+    "module": "commonjs",
     "target": "es2017",
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "jsx": "react",
-    "jsxFactory": "h"
+    "noUnusedParameters": true
   },
   "include": [
-    "."
+    ".",
   ],
+  "exclude": [
+    "node_modules"
+  ]
 }

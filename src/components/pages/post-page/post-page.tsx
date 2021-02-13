@@ -13,17 +13,13 @@ export class PostPage {
 
     content;
 
-    async componentWillRender() {
+    async componentDidLoad() {
         console.log("Start");
         this.content = await fetchContent(`/assets/html-pages/${this.page}.json`);
         this.el.shadowRoot.querySelector("#content").innerHTML = this.content.hypertext;
         console.log("🚀 ~ file: post-page.tsx ~ line 19 ~ PostPage ~ componentWillRender ~ this.content", this.content)
     }
-
-    componentDidLoad() {
-            // this.el.shadowRoot.querySelector("#content").innerHTML = this.content;
-    }
-
+    
     render() {
         return(
             <div id="content">

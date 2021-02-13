@@ -44,7 +44,7 @@ export class AppRoot {
 
           <Route 
             path={match("/posts/:page")}
-            render={({page}) => <post-page page={page} />}
+            render={({page}) => <post-page page={`posts/${page}`} />}
           />
 
         </Router.Switch>

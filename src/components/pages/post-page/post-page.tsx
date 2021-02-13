@@ -13,13 +13,14 @@ export class PostPage {
 
     content;
 
-    async componentDidLoad() {
+    async componentWillRender() {
         console.log("Start");
         this.content = await fetchContent(`/assets/html-pages/${this.page}.json`);
-        this.el.shadowRoot.querySelector("#content").innerHTML = this.content.hypertext;
-        console.log("🚀 ~ file: post-page.tsx ~ line 19 ~ PostPage ~ componentWillRender ~ this.content", this.content)
+        // this.el.shadowRoot.querySelector("#content").innerHTML = this.content.hypertext;
+        this.el.shadowRoot.innerHTML = this.content.hypertext;
+        // console.log("🚀 ~ file: post-page.tsx ~ line 19 ~ PostPage ~ componentWillRender ~ this.content", this.content)
     }
-    
+
     render() {
         return(
             <div id="content">
@@ -39,6 +40,6 @@ const fetchContent = (path: string) => {
       promise = fetch(path).then(response => response.json());
       localCache.set(path, promise);
     }
-    console.log("🚀 ~ file: post-page.tsx ~ line 47 ~ fetchContent ~ promise", promise)
+    // console.log("🚀 ~ file: post-page.tsx ~ line 47 ~ fetchContent ~ promise", promise)
     return promise;
 }

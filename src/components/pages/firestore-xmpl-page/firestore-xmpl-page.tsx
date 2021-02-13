@@ -1,26 +1,26 @@
 import { Component, h, Host } from "@stencil/core";
-import firebase from "firebase/app";
-import "firebase/firestore";
+// import firebase from "firebase/app";
+// import "firebase/firestore";
 
-let db = firebase.firestore();
+// let db = firebase.firestore();
 @Component({
   tag: "firestore-xmpl-page",
   shadow: true,
 })
 export class FirestoreXmplPage {
-  data;
-  id;
-  async componentWillLoad() {
-    await db
-      .collection("users")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          this.data = doc.data();
-          this.id = doc.id;
-        });
-      });
-  }
+  // data;
+  // id;
+  // async componentWillLoad() {
+  //   await db
+  //     .collection("users")
+  //     .get()
+  //     .then((querySnapshot) => {
+  //       querySnapshot.forEach((doc) => {
+  //         this.data = doc.data();
+  //         this.id = doc.id;
+  //       });
+  //     });
+  // }
   render() {
     // console.log(
     //   "🚀 ~ file: firestore-xmpl-page.tsx ~ line 25 ~ FirestoreXmplPage ~ render ~ this.data",
@@ -33,7 +33,7 @@ export class FirestoreXmplPage {
 
     return (
       <Host>
-        <p>Data from firestore:</p>
+        {/* <p>Data from firestore:</p>
         <p>
           doc.id: {this.id}
           <ul>
@@ -49,7 +49,8 @@ export class FirestoreXmplPage {
               </ul>
             </li>
           </ul>
-        </p>
+        </p> */}
+        All wast commented for acceleration prerender
       </Host>
     );
   }

@@ -1,5 +1,5 @@
 import { Component, h, Prop, Element } from "@stencil/core";
-// import { readFile } from "fs-extra";
+// import { Posts } from "../../../assets/html-pages/posts.json"
 
 @Component({
     tag: "post-page", 
@@ -9,35 +9,40 @@ import { Component, h, Prop, Element } from "@stencil/core";
 export class PostPage {
     @Element() el;
 
-    @Prop() page: string = "/";
+    @Prop() page: string = "posts";
 
-    content: string;
+    content;
 
-    async componentWillLoad() {
+    async componentWillRender() {
         console.log("Start");
-        if (this.page === "/") {
-            // берем html из html-pages/posts.md
-            this.content = "<p><b>Start</b> posts page</p>";
-            // this.content = await readFile("/assets/html-pages/posts.md", { encoding: 'utf8' });
-        }
-        else {
-            // берем html из html-pages/post/:page.md
-
-            console.log("Nope. It`s end");
-            
-        }
-        
+        this.content = await fetchContent(`/assets/html-pages/${this.page}.json`);
+        this.el.shadowRoot.querySelector("#content").innerHTML = this.content.hypertext;
+        console.log("🚀 ~ file: post-page.tsx ~ line 19 ~ PostPage ~ componentWillRender ~ this.content", this.content)
     }
 
     componentDidLoad() {
-            this.el.shadowRoot.querySelector("#content").innerHTML = this.content;
+            // this.el.shadowRoot.querySelector("#content").innerHTML = this.content;
     }
 
     render() {
         return(
             <div id="content">
-                {/* {this.content} */}
+                {/* {this.content.hypertext} */}
             </div>
         )
     }
+}
+
+const localCache = new Map;
+
+const fetchContent = (path: string) => {
+
+    let promise = localCache.get(path);
+    if (!promise) {
+      console.log('fetchContent', path);
+      promise = fetch(path).then(response => response.json());
+      localCache.set(path, promise);
+    }
+    console.log("🚀 ~ file: post-page.tsx ~ line 47 ~ fetchContent ~ promise", promise)
+    return promise;
 }

@@ -38,12 +38,12 @@ export class AppRoot {
             <example-page />
           </Route>
 
-          <Route path="/post">
+          <Route path="/posts">
             <post-page />
           </Route>
 
           <Route 
-            path={match("/post/:page")}
+            path={match("/posts/:page")}
             render={({page}) => <post-page page={page} />}
           />
 

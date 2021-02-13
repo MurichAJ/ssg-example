@@ -26,7 +26,7 @@ const SOURCE_DIR = './src/md-pages';
         let htmlContents = '';
         //   let markdownMetadata: MarkdownContent = {};
         const jsonFileName = path_1.default.relative(SOURCE_DIR, filePath);
-        const destinationFileName = path_1.default.join(DESTINATION_DIR, path_1.default.dirname(jsonFileName), path_1.default.basename(jsonFileName, '.md') + '.html');
+        const destinationFileName = path_1.default.join(DESTINATION_DIR, path_1.default.dirname(jsonFileName), path_1.default.basename(jsonFileName, '.md') + '.json');
         //   markdownMetadata.headings = [];
         const markdownContents = await fs_extra_1.readFile(filePath, { encoding: 'utf8' });
         try {
@@ -41,18 +41,19 @@ const SOURCE_DIR = './src/md-pages';
                 headerIds: true
             }).trim();
             await fs_extra_1.mkdirp(path_1.default.join(DESTINATION_DIR, path_1.default.dirname(jsonFileName)));
-            // const data = {
-            //   ...parsedMarkdown.attributes,
-            //   ...markdownMetadata,
-            //   srcPath: filePath,
-            //   hypertext: convertHtmlToHypertextData(htmlContents)
-            // };
+            const data = {
+                //   ...parsedMarkdown.attributes,
+                //   ...markdownMetadata,
+                //   srcPath: filePath,
+                //   hypertext: convertHtmlToHypertextData(htmlContents)
+                hypertext: htmlContents,
+            };
             // if (typeof data.title !== 'string') {
             //   data.title = 'Stencil';
             // } else {
             //   data.title = data.title.trim() + ' - Stencil';
             // }
-            await fs_extra_1.writeFile(destinationFileName, htmlContents, {
+            await fs_extra_1.writeFile(destinationFileName, JSON.stringify(data), {
                 encoding: 'utf8'
             });
         }

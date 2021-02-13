@@ -30,7 +30,7 @@ const SOURCE_DIR = './src/md-pages';
       const destinationFileName = path.join(
         DESTINATION_DIR,
         path.dirname(jsonFileName),
-        path.basename(jsonFileName, '.md') + '.html'
+        path.basename(jsonFileName, '.md') + '.json'
       );
     //   markdownMetadata.headings = [];
   
@@ -55,12 +55,13 @@ const SOURCE_DIR = './src/md-pages';
           path.dirname(jsonFileName)
         ));
   
-        // const data = {
+        const data = {
         //   ...parsedMarkdown.attributes,
         //   ...markdownMetadata,
         //   srcPath: filePath,
         //   hypertext: convertHtmlToHypertextData(htmlContents)
-        // };
+        hypertext: htmlContents,
+        };
   
         // if (typeof data.title !== 'string') {
         //   data.title = 'Stencil';
@@ -68,7 +69,7 @@ const SOURCE_DIR = './src/md-pages';
         //   data.title = data.title.trim() + ' - Stencil';
         // }
   
-        await writeFile(destinationFileName,  htmlContents, {
+        await writeFile(destinationFileName,  JSON.stringify(data), {
           encoding: 'utf8'
         });
   

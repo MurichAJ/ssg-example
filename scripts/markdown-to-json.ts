@@ -3,7 +3,7 @@ import glob from "glob";
 import { promisify } from "util";
 import path from "path";
 import { readFile, writeFile, mkdirp, remove } from "fs-extra";
-import frontMatter from 'front-matter';
+import frontMatter from "front-matter";
 
 // interface MarkdownContent {
 //   title?: string;

@@ -1,12 +1,12 @@
 ---
 title: Main Page for all posts
-description: Here must be some description
 url: /posts
 contributors:
   - MurichAJ
-meta: 
+metaTags: 
+  - {name: description, content: description}
   - {name: how work with it?, content: content for tag}
-  - {name: how work with it?, content: content for tag}
+  - {name: some tag, content: content for tag}
 ---
 # Main page for all posts
 

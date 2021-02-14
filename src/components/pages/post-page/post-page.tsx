@@ -13,7 +13,7 @@ export class PostPage {
 
     content;
 
-    async componentWillRender() {
+    async componentWillLoad() {
         console.log("Start");
         this.content = await fetchContent(`/assets/html-pages/${this.page}.json`);
         // this.el.shadowRoot.querySelector("#content").innerHTML = this.content.hypertext;
@@ -30,16 +30,16 @@ export class PostPage {
     }
 }
 
-const localCache = new Map;
+// const localCache = new Map;
 
 const fetchContent = (path: string) => {
 
-    let promise = localCache.get(path);
-    if (!promise) {
-      console.log('fetchContent', path);
-      promise = fetch(path).then(response => response.json());
-      localCache.set(path, promise);
-    }
+    // let promise = localCache.get(path);
+    // if (!promise) {
+    //   console.log('fetchContent', path);
+      let promise = fetch(path).then(response => response.json());
+    //   localCache.set(path, promise);
+    // }
     // console.log("🚀 ~ file: post-page.tsx ~ line 47 ~ fetchContent ~ promise", promise)
     return promise;
 }

@@ -23,8 +23,8 @@ import frontMatter from "front-matter";
 
 const globAsync = promisify(glob);
 
-const DESTINATION_DIR = "./src/assets/html-pages";
-const SOURCE_DIR = "./src/md-pages";
+const DESTINATION_DIR = "./src/assets/pages";
+const SOURCE_DIR = "./src/md";
 // const SITE_STRUCTURE_FILE = './src/assets/docs-structure.json';
 
 (async function () {
@@ -73,7 +73,7 @@ const SOURCE_DIR = "./src/md-pages";
         //   ...markdownMetadata,
         //   srcPath: filePath,
         //   hypertext: convertHtmlToHypertextData(htmlContents)
-        hypertext: htmlContents,
+        content: htmlContents,
       };
 
       // if (typeof data.title !== 'string') {

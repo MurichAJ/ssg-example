@@ -1,14 +1,16 @@
 ---
-title: Main Page for all posts
-url: /posts
+title: How i made first post
+url: /posts/first-post
 contributors:
   - MurichAJ
 metaTags: 
-  - {name: description, content: description}
-  - {name: how work with it?, content: content for tag}
-  - {name: some tag, content: content for tag}
+  - {name: application-name, content: "Static Site Generation Example"}
+  - {name: viewport, content: "width=device-width, initial-scale=1.0"}
+  - {name: description, content: "Study Web Development"}
+  - {name: keywords, content: "study,Stencil,JavaScript,TypeScript,HTML,SSG"}
+  - {name: autor, content: "Murich Alexandr"}
 ---
-# Main page for all posts
+# First post
 
 Nam sed `dapibus` lacus, vitae varius odio. Sed pretium tellus ac erat `tempus`, vel pretium purus finibus. Fusce viverra ut dolor id viverra. Fusce sed venenatis sapien. Morbi porttitor scelerisque orci, sed vehicula orci accumsan eu. Sed a `dignissim` odio, vitae congue lectus. Suspendisse nec mollis massa, ac vulputate nisi. Fusce aliquet porttitor ipsum at mollis. Fusce tempus nibh sed dolor egestas finibus. Sed mollis egestas sem sed pretium. Integer tempus posuere odio ac vulputate. Nullam id auctor dui. Ut posuere ut elit at scelerisque. Mauris mattis felis sit amet facilisis bibendum.
 

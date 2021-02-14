@@ -24,8 +24,8 @@ const front_matter_1 = __importDefault(require("front-matter"));
 //   content?: string
 // }
 const globAsync = util_1.promisify(glob_1.default);
-const DESTINATION_DIR = "./src/assets/html-pages";
-const SOURCE_DIR = "./src/md-pages";
+const DESTINATION_DIR = "./src/assets/pages";
+const SOURCE_DIR = "./src/md";
 // const SITE_STRUCTURE_FILE = './src/assets/docs-structure.json';
 (async function () {
     // const siteStructure = await readFile(SITE_STRUCTURE_FILE, { encoding: 'utf8' });
@@ -60,7 +60,7 @@ const SOURCE_DIR = "./src/md-pages";
                 //   ...markdownMetadata,
                 //   srcPath: filePath,
                 //   hypertext: convertHtmlToHypertextData(htmlContents)
-                hypertext: htmlContents });
+                content: htmlContents });
             // if (typeof data.title !== 'string') {
             //   data.title = 'Stencil';
             // } else {

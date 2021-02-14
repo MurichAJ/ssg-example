@@ -32,7 +32,7 @@ export class AppRoot {
             <firestore-xmpl-page />
           </Route>
 
-          <Route path="/test-page">
+          <Route path="/test">
             <test-page></test-page>
           </Route>
 
@@ -40,13 +40,18 @@ export class AppRoot {
             <example-page />
           </Route>
 
-          <Route path="/posts">
-            <post-page />
+          <Route path={match("/posts")}>
+            <posts-page/>
           </Route>
 
+          {/* <Route
+            path={match("/posts/:slug")}
+            render={({ slug }) => <post-page slug={ slug } />}
+          /> */}
+
           <Route
-            path={match("/posts/:page")}
-            render={({ page }) => <post-page page={`posts/${page}`} />}
+            path={match("/:slug/:slug")}
+            render={({ slug }) => <page-page slug={ slug } />}
           />
         </Router.Switch>
       </div>

@@ -16,8 +16,13 @@ export namespace Components {
     }
     interface FirestoreXmplPage {
     }
+    interface PagePage {
+        "slug"?: string;
+    }
     interface PostPage {
-        "page": string;
+        "slug": string;
+    }
+    interface PostsCmp {
     }
     interface TestPage {
     }
@@ -53,11 +58,23 @@ declare global {
         prototype: HTMLFirestoreXmplPageElement;
         new (): HTMLFirestoreXmplPageElement;
     };
+    interface HTMLPagePageElement extends Components.PagePage, HTMLStencilElement {
+    }
+    var HTMLPagePageElement: {
+        prototype: HTMLPagePageElement;
+        new (): HTMLPagePageElement;
+    };
     interface HTMLPostPageElement extends Components.PostPage, HTMLStencilElement {
     }
     var HTMLPostPageElement: {
         prototype: HTMLPostPageElement;
         new (): HTMLPostPageElement;
+    };
+    interface HTMLPostsCmpElement extends Components.PostsCmp, HTMLStencilElement {
+    }
+    var HTMLPostsCmpElement: {
+        prototype: HTMLPostsCmpElement;
+        new (): HTMLPostsCmpElement;
     };
     interface HTMLTestPageElement extends Components.TestPage, HTMLStencilElement {
     }
@@ -71,7 +88,9 @@ declare global {
         "cats-page": HTMLCatsPageElement;
         "example-page": HTMLExamplePageElement;
         "firestore-xmpl-page": HTMLFirestoreXmplPageElement;
+        "page-page": HTMLPagePageElement;
         "post-page": HTMLPostPageElement;
+        "posts-cmp": HTMLPostsCmpElement;
         "test-page": HTMLTestPageElement;
     }
 }
@@ -86,8 +105,13 @@ declare namespace LocalJSX {
     }
     interface FirestoreXmplPage {
     }
+    interface PagePage {
+        "slug"?: string;
+    }
     interface PostPage {
-        "page"?: string;
+        "slug"?: string;
+    }
+    interface PostsCmp {
     }
     interface TestPage {
     }
@@ -97,7 +121,9 @@ declare namespace LocalJSX {
         "cats-page": CatsPage;
         "example-page": ExamplePage;
         "firestore-xmpl-page": FirestoreXmplPage;
+        "page-page": PagePage;
         "post-page": PostPage;
+        "posts-cmp": PostsCmp;
         "test-page": TestPage;
     }
 }
@@ -110,7 +136,9 @@ declare module "@stencil/core" {
             "cats-page": LocalJSX.CatsPage & JSXBase.HTMLAttributes<HTMLCatsPageElement>;
             "example-page": LocalJSX.ExamplePage & JSXBase.HTMLAttributes<HTMLExamplePageElement>;
             "firestore-xmpl-page": LocalJSX.FirestoreXmplPage & JSXBase.HTMLAttributes<HTMLFirestoreXmplPageElement>;
+            "page-page": LocalJSX.PagePage & JSXBase.HTMLAttributes<HTMLPagePageElement>;
             "post-page": LocalJSX.PostPage & JSXBase.HTMLAttributes<HTMLPostPageElement>;
+            "posts-cmp": LocalJSX.PostsCmp & JSXBase.HTMLAttributes<HTMLPostsCmpElement>;
             "test-page": LocalJSX.TestPage & JSXBase.HTMLAttributes<HTMLTestPageElement>;
         }
     }

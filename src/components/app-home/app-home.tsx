@@ -19,7 +19,7 @@ export class AppHome {
         <a href="/firestore-xmpl">
           <button>Firestore Example</button>
         </a>
-        <a href="/test-page">
+        <a href="/test">
           <button>Test Md page</button>
         </a>
         <a href="/posts">

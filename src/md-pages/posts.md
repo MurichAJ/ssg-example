@@ -1,3 +1,13 @@
+---
+title: Main Page for all posts
+description: Here must be some description
+url: /posts
+contributors:
+  - MurichAJ
+meta: 
+  - {name: how work with it?, content: content for tag}
+  - {name: how work with it?, content: content for tag}
+---
 # Main page for all posts
 
 Nam sed `dapibus` lacus, vitae varius odio. Sed pretium tellus ac erat `tempus`, vel pretium purus finibus. Fusce viverra ut dolor id viverra. Fusce sed venenatis sapien. Morbi porttitor scelerisque orci, sed vehicula orci accumsan eu. Sed a `dignissim` odio, vitae congue lectus. Suspendisse nec mollis massa, ac vulputate nisi. Fusce aliquet porttitor ipsum at mollis. Fusce tempus nibh sed dolor egestas finibus. Sed mollis egestas sem sed pretium. Integer tempus posuere odio ac vulputate. Nullam id auctor dui. Ut posuere ut elit at scelerisque. Mauris mattis felis sit amet facilisis bibendum.

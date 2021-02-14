@@ -3,6 +3,23 @@ import glob from "glob";
 import { promisify } from "util";
 import path from "path";
 import { readFile, writeFile, mkdirp, remove } from "fs-extra";
+import frontMatter from 'front-matter';
+
+// interface MarkdownContent {
+//   title?: string;
+//   description?: string;
+//   meta? : MarkdownMetaTags[],
+//   url?: string;
+//   contributors?: string[];
+//   // headings?: MarkdownHeading[];
+//   // srcPath?: string;
+//   hypertext?: any[];
+// }
+
+// interface MarkdownMetaTags {
+//   name?: string,
+//   content?: string
+// }
 
 const globAsync = promisify(glob);
 
@@ -24,19 +41,19 @@ const SOURCE_DIR = "./src/md-pages";
       return Promise.resolve();
     }
     let htmlContents = "";
-    //   let markdownMetadata: MarkdownContent = {};
+    // let markdownMetadata: MarkdownContent = {};
     const jsonFileName = path.relative(SOURCE_DIR, filePath);
     const destinationFileName = path.join(
       DESTINATION_DIR,
       path.dirname(jsonFileName),
       path.basename(jsonFileName, ".md") + ".json"
     );
-    //   markdownMetadata.headings = [];
+    // markdownMetadata.headings = [];
 
     const markdownContents = await readFile(filePath, { encoding: "utf8" });
 
     try {
-      // let parsedMarkdown = frontMatter<any>(markdownContents);
+      let parsedMarkdown = frontMatter<any>(markdownContents);
       // parsedMarkdown = await getGithubData(filePath, parsedMarkdown);
 
       const renderer = new marked.Renderer();
@@ -44,7 +61,7 @@ const SOURCE_DIR = "./src/md-pages";
       // collectHeadingMetadata(renderer, markdownMetadata);
       // changeCodeCreation(renderer);
       // localizeMarkdownLink(renderer, destinationFileName.replace('src',''), siteStructureJson);
-      htmlContents = marked(markdownContents, {
+      htmlContents = marked(parsedMarkdown.body, {
         renderer,
         headerIds: true,
       }).trim();
@@ -52,7 +69,7 @@ const SOURCE_DIR = "./src/md-pages";
       await mkdirp(path.join(DESTINATION_DIR, path.dirname(jsonFileName)));
 
       const data = {
-        //   ...parsedMarkdown.attributes,
+        ...parsedMarkdown.attributes,
         //   ...markdownMetadata,
         //   srcPath: filePath,
         //   hypertext: convertHtmlToHypertextData(htmlContents)

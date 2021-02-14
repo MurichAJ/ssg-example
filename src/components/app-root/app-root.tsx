@@ -1,12 +1,12 @@
-import { Component, h } from '@stencil/core';
+import { Component, h } from "@stencil/core";
 
 import { createRouter, match, Route } from "stencil-router-v2";
 
 const Router = createRouter();
 
 @Component({
-  tag: 'app-root',
-  styleUrl: 'app-root.css',
+  tag: "app-root",
+  styleUrl: "app-root.css",
   shadow: true,
 })
 export class AppRoot {
@@ -14,7 +14,9 @@ export class AppRoot {
     return (
       <div>
         <header>
-          <a href="/"><h1>SSG Example</h1></a>
+          <a href="/">
+            <h1>SSG Example</h1>
+          </a>
         </header>
 
         <Router.Switch>
@@ -42,11 +44,10 @@ export class AppRoot {
             <post-page />
           </Route>
 
-          <Route 
+          <Route
             path={match("/posts/:page")}
-            render={({page}) => <post-page page={`posts/${page}`} />}
+            render={({ page }) => <post-page page={`posts/${page}`} />}
           />
-
         </Router.Switch>
       </div>
     );

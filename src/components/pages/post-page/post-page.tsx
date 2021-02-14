@@ -25,7 +25,7 @@ export class PostPage {
       <Host>
         <Helmet>
           <title>{this.content.title}</title>
-          {this.content.metaTags.map((metaTag) => <meta name={metaTag.name} content={metaTag.name} /> )}
+          {this.content.metaTags.map((metaTag) => <meta name={metaTag.name} content={metaTag.content} /> )}
           {/* <link rel="stylesheet" href="/styles.css"/> */}
         </Helmet>
         <div id="content">{/* {this.content.hypertext} */}</div>

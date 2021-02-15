@@ -1,5 +1,5 @@
 ---
-title: Posts list? Or what?
+title: About
 url: /posts
 contributors:
   - MurichAJ

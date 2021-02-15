@@ -15,7 +15,7 @@ export class PostPage {
   async componentWillLoad() {
     console.log("Start");
     this.data = await fetchData(`/assets/pages/posts/${this.slug}.json`);
-    this.el.shadowRoot.innerHTML = this.data.content;
+    // this.el.shadowRoot.innerHTML = this.data.content;
   }
 
   render() {
@@ -24,9 +24,10 @@ export class PostPage {
         <Helmet>
           <title>{this.data.title}</title>
           {this.data.metaTags.map((metaTag) => (
-            <meta name={metaTag.name} content={metaTag.content} />
+            <meta {...metaTag} />
           ))}
         </Helmet>
+        <div innerHTML={this.data.content} />
       </Host>
     );
   }

@@ -1,5 +1,5 @@
 ---
-title: Posts list? Or what?
+title: Try markdown
 url: /posts
 contributors:
   - MurichAJ

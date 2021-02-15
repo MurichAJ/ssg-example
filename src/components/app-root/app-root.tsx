@@ -1,6 +1,6 @@
 import { Component, Host, h } from "@stencil/core";
 
-import { Route, createRouter, match  } from "stencil-router-v2";
+import { Route, createRouter, href, match  } from "stencil-router-v2";
 
 const Router = createRouter();
 
@@ -42,13 +42,13 @@ export class AppRoot {
         </Router.Switch>
 
         <footer>
-          <a href="/about">
+          <a {...href("/about")}>
             <p>About</p>
           </a>
-          <a href="/info">
+          <a {...href("/info")}>
             <p>Info</p>
           </a>
-          <a href="/contact">
+          <a {...href("/contact")}>
             <p>Contact Us</p>
           </a>
         </footer>

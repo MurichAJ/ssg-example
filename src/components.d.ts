@@ -17,14 +17,12 @@ export namespace Components {
     interface FirestoreXmplPage {
     }
     interface PagePage {
-        "slug"?: string;
+        "slug": string;
     }
     interface PostPage {
         "slug": string;
     }
     interface PostsCmp {
-    }
-    interface TestPage {
     }
 }
 declare global {
@@ -76,12 +74,6 @@ declare global {
         prototype: HTMLPostsCmpElement;
         new (): HTMLPostsCmpElement;
     };
-    interface HTMLTestPageElement extends Components.TestPage, HTMLStencilElement {
-    }
-    var HTMLTestPageElement: {
-        prototype: HTMLTestPageElement;
-        new (): HTMLTestPageElement;
-    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-root": HTMLAppRootElement;
@@ -91,7 +83,6 @@ declare global {
         "page-page": HTMLPagePageElement;
         "post-page": HTMLPostPageElement;
         "posts-cmp": HTMLPostsCmpElement;
-        "test-page": HTMLTestPageElement;
     }
 }
 declare namespace LocalJSX {
@@ -113,8 +104,6 @@ declare namespace LocalJSX {
     }
     interface PostsCmp {
     }
-    interface TestPage {
-    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-root": AppRoot;
@@ -124,7 +113,6 @@ declare namespace LocalJSX {
         "page-page": PagePage;
         "post-page": PostPage;
         "posts-cmp": PostsCmp;
-        "test-page": TestPage;
     }
 }
 export { LocalJSX as JSX };
@@ -139,7 +127,6 @@ declare module "@stencil/core" {
             "page-page": LocalJSX.PagePage & JSXBase.HTMLAttributes<HTMLPagePageElement>;
             "post-page": LocalJSX.PostPage & JSXBase.HTMLAttributes<HTMLPostPageElement>;
             "posts-cmp": LocalJSX.PostsCmp & JSXBase.HTMLAttributes<HTMLPostsCmpElement>;
-            "test-page": LocalJSX.TestPage & JSXBase.HTMLAttributes<HTMLTestPageElement>;
         }
     }
 }

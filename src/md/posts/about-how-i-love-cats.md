@@ -1,3 +1,16 @@
+---
+title: Posts list? Or what?
+url: /posts
+contributors:
+  - MurichAJ
+metaTags: 
+  - {name: application-name, content: "Static Site Generation Example"}
+  - {name: viewport, content: "width=device-width, initial-scale=1.0"}
+  - {name: description, content: "Study Web Development"}
+  - {name: keywords, content: "study,Stencil,JavaScript,TypeScript,HTML,SSG"}
+  - {name: autor, content: "Murich Alexandr"}
+---
+
 # Test markdown page
 __Lorem ipsum dolor sit amet__, consectetur adipiscing elit. Phasellus facilisis metus pretium, suscipit nisl quis, elementum diam. Nullam vel purus vel sem placerat pharetra vel et quam. Nam sed finibus magna, eget sollicitudin orci. Nam id egestas eros, dictum dapibus dui. `Pellentesque` in ullamcorper orci, nec viverra odio. Cras maximus suscipit velit. In tristique lacus id placerat blandit. Sed nec volutpat felis. Sed consequat blandit leo at pellentesque. Pellentesque aliquet, sem eu tempor rutrum, felis enim sollicitudin sapien, a `hendrerit` nulla erat vel augue. Aliquam placerat, ante id aliquet viverra, nibh elit vehicula enim, id condimentum ex metus et est. Nulla purus nulla, venenatis eu ligula et, viverra bibendum diam. Quisque tellus leo, accumsan ut felis at, egestas malesuada dolor. Morbi semper tortor mi, et pretium risus pulvinar sit amet. Nunc fringilla, mi eget tincidunt pulvinar, sem libero interdum sapien, sed egestas elit mauris vitae mi.  
 

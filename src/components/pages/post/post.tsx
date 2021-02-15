@@ -33,6 +33,8 @@ export class PostPage {
 }
 
 const fetchData = (path: string) => {
-  let promise = fetch(path).then((response) => response.json());
+  let promise = fetch(path)
+    .then((response) => response.json())
+    .catch(( ) => document.location.href = "/404");
   return promise;
 };

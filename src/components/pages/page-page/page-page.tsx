@@ -1,26 +1,41 @@
-//Компонента страница??? Как, что, для чего?
-import { Component, h, Prop } from "@stencil/core";
+import { Component, Element, Host, Prop, h } from "@stencil/core";
+import Helmet from "@stencil/helmet";
 
 @Component({
   tag: "page-page",
   styleUrl: "page.css",
   shadow: true,
 })
-export class PagePage {
-  @Prop() slug?: string;
+export class PostPage {
+  @Element() el;
+
+  @Prop() slug: string;
+
+  data;
+
+  async componentWillLoad() {
+    console.log("Start");
+    this.data = await fetchData(`/assets/pages/pages/${this.slug}.json`);
+    this.el.shadowRoot.innerHTML = this.data.content;
+  }
 
   render() {
     return (
-      <main>
-        <nav>
-          Here must be some site navigation
-          {/* <posts-cmp></posts-cmp> */}
-        </nav>
-        <article>
-          <post-page slug={this.slug}></post-page>
-        </article>
-        <aside>Try to use semantic tags</aside>
-      </main>
+      <Host>
+        <Helmet>
+          <title>{this.data.title}</title>
+          {this.data.metaTags.map((metaTag) => (
+            <meta name={metaTag.name} content={metaTag.content} />
+          ))}
+        </Helmet>
+      </Host>
     );
   }
 }
+
+const fetchData = (path: string) => {
+  let promise = fetch(path)
+    .then((response) => response.json())
+    .catch(( ) => document.location.href = "/404");
+  return promise;
+};

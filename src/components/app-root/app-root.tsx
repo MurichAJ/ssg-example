@@ -21,7 +21,7 @@ export class AppRoot {
 
         <Router.Switch>
           <Route path="/">
-            <app-home />
+            <page-page slug="main"/>
           </Route>
 
           <Route
@@ -33,6 +33,8 @@ export class AppRoot {
                 return document.location.href = "/404" // Пространство для других структур. Например: docs, messages...
               }}}
           />
+
+          <Route path="/main" to="/" />
 
           <Route
             path={match("/:slug")}
@@ -51,6 +53,15 @@ export class AppRoot {
           <a {...href("/contact")}>
             <p>Contact Us</p>
           </a>
+          {/* <a href="/about">
+            <p>About</p>
+          </a>
+          <a href="/info">
+            <p>Info</p>
+          </a>
+          <a href="/contact">
+            <p>Contact Us</p>
+          </a> */}
         </footer>
       </Host>
     );

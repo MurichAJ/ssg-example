@@ -27,6 +27,13 @@ export class PostPage {
           {this.data.metaTags.map((metaTag) => (
             <meta {...metaTag} />
           ))}
+          {this.data.links.map((link) => {
+            console.log(
+              "🚀 ~ file: page-page.tsx ~ line 31 ~ PostPage ~ render ~ link",
+              link
+            );
+            return <link {...link} />;
+          })}
         </Helmet>
         <div innerHTML={this.data.content} />
       </Host>

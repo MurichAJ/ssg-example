@@ -30,7 +30,7 @@ export class AppRoot {
               if ( slug1  === "posts") {
                 return <post-page slug={ slug2 }/>}
               else {
-                return undefined // Пространство для других структур. Например: docs, messages...
+                return document.location.href = "/404" // Пространство для других структур. Например: docs, messages...
               }}}
           />
 

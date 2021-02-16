@@ -1,10 +1,8 @@
 ---
 title: Test
-url: https://ssg-example-96380.web.app/posts/test/
+url: /posts/test/
 contributors:
   - MurichAJ
-links:
-  - {rel: "canonical", href: "https://ssg-example-96380.web.app/posts/test/"}
 metaTags: 
   - {name: application-name, content: "Static Site Generation Example"}
   - {name: viewport, content: "width=device-width, initial-scale=1.0"}
@@ -13,7 +11,7 @@ metaTags:
   - {name: autor, content: "Murich Alexandr"}
   - {property: "og:title", content: "test"}
   - {property: "og:site_name", content: "SSG Example"}
-  - {property: "og:url", content: "https://ssg-example-96380.web.app/posts/test/"}
+  - {property: "og:url", content: "/posts/test/"}
   - {property: "og:description", content: "Study Web Development"}
   - {property: "og:image", content: "/assets/images/Unknown.jpg"}
   - {name: "twitter:card", content: "summary_large_image"}

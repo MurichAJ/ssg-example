@@ -1,10 +1,8 @@
 ---
 title: About how i love cats
-url: https://ssg-example-96380.web.app/posts/about-how-i-love-cats/
+url: /posts/about-how-i-love-cats/
 contributors:
   - MurichAJ
-links:
-  - {rel: "canonical", href: "https://ssg-example-96380.web.app/posts/about-how-i-love-cats/"}
 metaTags: 
   - {name: application-name, content: "Static Site Generation Example"}
   - {name: viewport, content: "width=device-width, initial-scale=1.0"}
@@ -13,7 +11,7 @@ metaTags:
   - {name: autor, content: "Murich Alexandr"}
   - {property: "og:title", content: "About how i love cats"}
   - {property: "og:site_name", content: "SSG Example"}
-  - {property: "og:url", content: "https://ssg-example-96380.web.app/posts/about-how-i-love-cats/"}
+  - {property: "og:url", content: "/posts/about-how-i-love-cats/"}
   - {property: "og:description", content: "Study Web Development"}
   - {property: "og:image", content: "/assets/images/Unknown.jpg"}
   - {name: "twitter:card", content: "summary_large_image"}

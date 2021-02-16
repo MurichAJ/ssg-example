@@ -34,7 +34,7 @@ export class AppRoot {
               }}}
           />
 
-          <Route path="/main" to="/" />
+          {/* <Route path="/main" to="/" /> */}
 
           <Route
             path={match("/:slug")}

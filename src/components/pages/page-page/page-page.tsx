@@ -1,21 +1,27 @@
-import { Component, Element, Host, Prop, h } from "@stencil/core";
+import { Component, Element, Host, Prop, State, Watch, h } from "@stencil/core";
 import Helmet from "@stencil/helmet";
 
 @Component({
   tag: "page-page",
-  styleUrl: "page.css",
+  styleUrl: "page.scss",
   shadow: true,
 })
-export class PostPage {
+export class PagePage {
   @Element() el;
 
   @Prop() slug: string;
 
-  data;
+  @State() data;
 
+  @Watch("slug")
+  async slugHandler() {
+    this.data = await fetchData(`/assets/pages/pages/${this.slug}.json`);
+
+  }
   async componentWillLoad() {
     console.log("Start");
-    this.data = await fetchData(`/assets/pages/pages/${this.slug}.json`);
+    await this.slugHandler();
+    // this.data = await fetchData(`/assets/pages/pages/${this.slug}.json`);
     // this.el.shadowRoot.innerHTML = this.data.content;
   }
 
@@ -27,13 +33,6 @@ export class PostPage {
           {this.data.metaTags.map((metaTag) => (
             <meta {...metaTag} />
           ))}
-          {this.data.links.map((link) => {
-            console.log(
-              "🚀 ~ file: page-page.tsx ~ line 31 ~ PostPage ~ render ~ link",
-              link
-            );
-            return <link {...link} />;
-          })}
         </Helmet>
         <div innerHTML={this.data.content} />
       </Host>

@@ -18,8 +18,8 @@ metaTags:
   - {name: "twitter:description", content: "Study Web Development"}
   - {name: "twitter:image", content: "/assets/images/Unknown4.jpg"}
   - {name: "twitter:title", content: "about"}
-  # - {name: "twitter:creator", content: "@MurichAJ"}
-  # - {name: "twitter:site", content: "@ssg"}
+  - {name: "twitter:creator", content: "@MurichAJ"}
+  - {name: "twitter:site", content: "@ssg"}
 ---
 
 # About Page

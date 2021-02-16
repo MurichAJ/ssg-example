@@ -1,4 +1,4 @@
-import { Component, Element,/*  Host, */ Prop, State, Watch, h } from "@stencil/core";
+import { Component, Element, Host, Prop, State, Watch, h } from "@stencil/core";
 import Helmet from "@stencil/helmet";
 
 @Component({
@@ -27,7 +27,7 @@ export class PagePage {
 
   render() {
     return (
-      <div>
+      <Host>
         <Helmet>
           <title>{this.data.title}</title>
           {this.data.metaTags.map((metaTag) => (
@@ -35,7 +35,7 @@ export class PagePage {
           ))}
         </Helmet>
         <div innerHTML={this.data.content} />
-      </div>
+      </Host>
     );
   }
 }

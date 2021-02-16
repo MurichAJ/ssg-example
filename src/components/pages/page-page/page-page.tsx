@@ -1,4 +1,4 @@
-import { Component, Element, Host, Prop, State, Watch, h } from "@stencil/core";
+import { Component, Element,/*  Host, */ Prop, State, Watch, h } from "@stencil/core";
 import Helmet from "@stencil/helmet";
 
 @Component({
@@ -27,7 +27,7 @@ export class PagePage {
 
   render() {
     return (
-      <Host>
+      <div>
         <Helmet>
           <title>{this.data.title}</title>
           {this.data.metaTags.map((metaTag) => (
@@ -35,7 +35,7 @@ export class PagePage {
           ))}
         </Helmet>
         <div innerHTML={this.data.content} />
-      </Host>
+      </div>
     );
   }
 }
@@ -43,6 +43,6 @@ export class PagePage {
 const fetchData = (path: string) => {
   let promise = fetch(path)
     .then((response) => response.json())
-    .catch(() => (document.location.href = "/404"));
+    .catch(() => (document.location.href = "/undefined-404"));
   return promise;
 };

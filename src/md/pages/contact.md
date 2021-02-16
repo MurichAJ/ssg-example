@@ -14,9 +14,9 @@ metaTags:
   - {property: "og:url", content: "/contact"}
   - {property: "og:description", content: "Study Web Development"}
   - {property: "og:image", content: "/assets/images/Unknown4.jpg"}
-  - {name: "twitter:card", content: "summary_large_image"}
+  - {name: "twitter:card", content: "summary"}
   - {name: "twitter:description", content: "Study Web Development"}
-  - {name: "twitter:image", content: "/assets/images/Unknown.jpg"}
+  - {name: "twitter:image", content: "/assets/images/Unknown4.jpg"}
   - {name: "twitter:title", content: "contact"}
   - {name: "twitter:creator", content: "@MurichAJ"}
   - {name: "twitter:site", content: "@ssg"}

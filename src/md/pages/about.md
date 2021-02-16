@@ -14,12 +14,12 @@ metaTags:
   - {property: "og:url", content: "/about"}
   - {property: "og:description", content: "Study Web Development"}
   - {property: "og:image", content: "/assets/images/Unknown4.jpg"}
-  - {name: "twitter:card", content: "summary_large_image"}
+  - {name: "twitter:card", content: "summary"}
   - {name: "twitter:description", content: "Study Web Development"}
-  - {name: "twitter:image", content: "/assets/images/Unknown.jpg"}
+  - {name: "twitter:image", content: "/assets/images/Unknown4.jpg"}
   - {name: "twitter:title", content: "about"}
-  - {name: "twitter:creator", content: "@MurichAJ"}
-  - {name: "twitter:site", content: "@ssg"}
+  # - {name: "twitter:creator", content: "@MurichAJ"}
+  # - {name: "twitter:site", content: "@ssg"}
 ---
 
 # About Page

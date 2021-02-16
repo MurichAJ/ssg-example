@@ -43,6 +43,6 @@ export class PagePage {
 const fetchData = (path: string) => {
   let promise = fetch(path)
     .then((response) => response.json())
-    .catch(() => (document.location.href = "/404"));
+    .catch(() => (document.location.href = "/undefined-404"));
   return promise;
 };

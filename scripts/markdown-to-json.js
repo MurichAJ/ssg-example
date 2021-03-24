@@ -35,9 +35,9 @@ const SOURCE_DIR = "./src/md";
     // console.log("🚀 ~ file: markdown-to-html.ts ~ line 17 ~ files", files)
     await fs_extra_1.remove(DESTINATION_DIR);
     const filePromises = files.map(async (filePath) => {
-        if (filePath === "./src/docs/README.md") {
-            return Promise.resolve();
-        }
+        // if (filePath === "./src/docs/README.md") {
+        //   return Promise.resolve();
+        // }
         let htmlContents = "";
         // let markdownMetadata: MarkdownContent = {};
         const jsonFileName = path_1.default.relative(SOURCE_DIR, filePath);

@@ -13,7 +13,8 @@
     "md-to-json": "tsc --p ./scripts && node ./scripts/markdown-to-json"
   },
   "devDependencies": {
-    "@stencil/core": "^2.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@stencil/core": "^2.5.0",
     "@stencil/helmet": "^0.3.2",
     "@types/fs-extra": "^9.0.7",
     "@types/glob": "^7.1.3",

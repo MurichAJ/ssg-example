@@ -1,6 +1,6 @@
 import { Component, Host, h } from "@stencil/core";
 
-import { Route, createRouter, href, match  } from "stencil-router-v2";
+import { Route, createRouter, href, match } from "stencil-router-v2";
 
 const Router = createRouter();
 
@@ -21,24 +21,33 @@ export class AppRoot {
 
         <Router.Switch>
           <Route path="/">
-            <page-page slug="main"/>
+            <page-page slug="main" />
+          </Route>
+
+          <Route path="/example">
+            <example-page></example-page>
+          </Route>
+
+          <Route path="/firestore">
+            <firestore-xmpl-page></firestore-xmpl-page>
           </Route>
 
           <Route
             path={match("/:slug1/:slug2")}
             render={({ slug1, slug2 }) => {
-              if ( slug1  === "posts") {
-                return <post-page slug={ slug2 }/>}
-              else {
-                return document.location.href = "/404" // Пространство для других структур. Например: docs, messages...
-              }}}
+              if (slug1 === "posts") {
+                return <post-page slug={slug2} />;
+              } else {
+                return (document.location.href = "/404"); // Пространство для других структур. Например: docs, messages...
+              }
+            }}
           />
 
           {/* <Route path="/main" to="/" /> */}
 
           <Route
             path={match("/:slug")}
-            render={({ slug }) => <page-page slug={ slug }/>}
+            render={({ slug }) => <page-page slug={slug} />}
           />
           {/* 404 page */}
         </Router.Switch>
@@ -52,6 +61,9 @@ export class AppRoot {
           </a>
           <a {...href("/contact")}>
             <p>Contact Us</p>
+          </a>
+          <a {...href("/firestore")}>
+            <p>Firestore test</p>
           </a>
           {/* <a href="/about">
             <p>About</p>

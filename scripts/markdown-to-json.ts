@@ -37,9 +37,9 @@ const SOURCE_DIR = "./src/md";
   await remove(DESTINATION_DIR);
 
   const filePromises = files.map(async (filePath) => {
-    if (filePath === "./src/docs/README.md") {
-      return Promise.resolve();
-    }
+    // if (filePath === "./src/docs/README.md") {
+    //   return Promise.resolve();
+    // }
     let htmlContents = "";
     // let markdownMetadata: MarkdownContent = {};
     const jsonFileName = path.relative(SOURCE_DIR, filePath);

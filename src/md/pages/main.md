@@ -28,4 +28,7 @@ Welcome to the Static Site Generation Example.
 
 [Posts Page](/posts)
 
+[Example Page](/example)
+
+
 text
